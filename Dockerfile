@@ -8,7 +8,7 @@ WORKDIR /app
 
 COPY datum_gateway /app/
 
-RUN cmake . && make
+RUN cmake -DCMAKE_C_FLAGS=-DDATUM_API_FOR_UMBREL . && make
 
 FROM debian:bookworm-slim AS base
 
